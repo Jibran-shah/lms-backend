@@ -1,3 +1,4 @@
+const connectDB = require('./config/db');
 const express = require('express');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
@@ -5,6 +6,7 @@ const cors = require('cors');
 
 // Load secret keys
 dotenv.config();
+connectDB();
 
 const app = express();
 
