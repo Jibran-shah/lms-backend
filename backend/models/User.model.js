@@ -42,13 +42,13 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
 
   const saltRounds = Number(process.env.BCRYPT_SALT_ROUNDS) || 12;
-  this.password = await bcrypt.hash(this.password, saltRounds);
 
-  next();
+  this.password = await bcrypt.hash(this.password, saltRounds);
 });
 
 

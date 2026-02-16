@@ -1,4 +1,4 @@
-import { redisClient } from "../config/redis.js";
+import { redisClient } from "../backend/config/redis.js";
 import { v4 as uuidv4 } from "uuid";
 
 /**
@@ -41,7 +41,7 @@ export const deleteAllSessions = async (userId) => {
   for await (const key of redisClient.scanIterator({ MATCH: pattern })) {
     keys.push(key);
   }
-  if (keys.length > 0) await redisClient.del(keys);
+  if (keys.length > 0) await redisClient.del(...keys);
 };
 
 
