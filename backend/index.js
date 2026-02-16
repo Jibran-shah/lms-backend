@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import connectDB from "./backend/config/db.js";
-import { connectRedis } from "./backend/config/redis.js";
+import connectDB from "./config/db.js";
+import { connectRedis } from "./config/redis.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 dotenv.config();
 // Connect Database

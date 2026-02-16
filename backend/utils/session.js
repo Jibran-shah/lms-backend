@@ -1,4 +1,4 @@
-import { redisClient } from "../backend/config/redis.js";
+import { redisClient } from "../config/redis.js";
 import { v4 as uuidv4 } from "uuid";
 
 /**

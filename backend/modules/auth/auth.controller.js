@@ -122,7 +122,7 @@ export const refreshToken = async (req, res) => {
  */
 export const logout = async (req, res) => {
   try {
-    const refreshTokenCookie = req.cookies.refreshTokenCookie;
+    const refreshTokenCookie = req.cookies.refreshToken;
     if (!refreshTokenCookie) {
       return res.status(400).json({ success: false, message: "No refresh token found" });
     }
@@ -147,7 +147,7 @@ export const logout = async (req, res) => {
  */
 export const logoutAll = async (req, res) => {
   try {
-    const refreshTokenCookie = req.cookies.refreshTokenCookie;
+    const refreshTokenCookie = req.cookies.refreshToken;
 
     if (!refreshTokenCookie) {
       return res.status(400).json({ success: false, message: "No refresh token found" });
